@@ -1,0 +1,404 @@
+/*---------- GLOBAL STYLES ----------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f2ed; 
+    font-size: 100%;
+}
+
+#current-page {
+    text-decoration: underline;
+    text-decoration-color: #3aa6ee;
+    text-decoration-thickness: 0.18rem;
+}
+
+#current-page:hover {
+    text-decoration: none;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.3rem;
+    color: #121212;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Bungee Shade', cursive;
+    font-weight: 800;
+    margin-left: 0.5rem ;
+    line-height: 2.5rem;
+    color: #121212;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+    display: inline;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    color: #121212;
+}
+
+li a {
+    text-decoration: underline;
+    text-decoration-color: #8160f7;
+    text-decoration-thickness: 0.2rem;
+    text-underline-offset: 0.2rem;
+    margin-bottom: 20px;
+    color: #121212;
+    padding: 0 0.2rem;
+    margin: 1.3rem;
+
+}
+
+li a:hover {
+    background-color: #0d3a6d;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #121212;
+}
+
+#tags-img {
+    width: 150px;
+    margin: 20px;
+}
+
+
+/*---------- NAVBAR STYLING ----------*/
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8f95b4;
+    color: #084052;   
+    height: 42px;
+}
+
+.nav-title {
+    align-self: flex-start;
+}
+
+.nav-links ul {
+    display: flex;
+}
+
+.nav-links li a {
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.hamburger-menu {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.2rem;
+    height: 35px;
+    display: none;
+    justify-content: flex-end;
+    align-content: center;
+}
+
+
+/*---------- NAVBAR MEDIA QUERY ----------*/
+
+@media only screen and (max-width: 670px) {
+    .hamburger-menu {
+        display: flex;
+    }
+    .nav-links {
+        display: none;
+        width: 100%;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links ul {
+        width: 100%;
+        flex-direction: column;
+        background-color: #ADB3D5;
+        z-index: 1;
+    }
+    .nav-links li {
+        text-align: center;
+        padding: 0.7rem 1rem;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+
+/*---------- HOMEPAGE (INDEX) STYLING ----------*/
+
+.main-container {
+    min-height: 91vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #121212;   
+}
+
+.main-container img {
+    width: 150px;
+    margin: 20px;
+}
+
+.main-container h1 {
+    font-family: 'Bungee Shade', cursive;
+    text-shadow: -3px 3px 10px rgba(18, 18, 18, 0.2);
+    color: #121212;
+    font-size: 5rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: 5rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.main-links-container ul {
+    justify-content: center;
+}
+
+.main-links-container li {
+    padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+    .main-container h1 {
+        font-size: 16vw;
+    }
+}
+
+
+/*---------- PORTFOLIO STYLING ----------*/
+
+.coming-soon {
+    text-align: center;
+    margin: 20px;
+    text-shadow: -3px 3px 10px rgba(18, 18, 18, 0.2);
+}
+
+
+/*---------- ABOUT STYLING ----------*/
+
+.about-grid-container {
+    display: grid;
+    min-height: 80vh;
+    grid-template-columns: 1.2fr 1.5fr 1.2fr;
+    grid-template-rows: max-content;
+    grid-template-areas: 
+    "profile-pic about-me about-me"
+    "tech-stack about-me about-me"
+    "tech-stack about-contact tags-pic";
+    grid-gap: 0.2rem;
+    align-items: start;
+    margin: 80px 60px 0 60px;
+}
+
+#profile-pic {
+    width: 80%;
+    border-radius: 50%;
+    grid-area: profile-pic;
+    display: flex;
+    justify-self: center;
+    align-self: start;
+}
+
+.about-me {
+    grid-area: about-me;
+    justify-self: left;
+    text-align: left;
+    padding: 0 10px;
+    width: 90%;
+}
+
+.about-me h2 {
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+
+.tech-stack {
+    grid-area: tech-stack;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.tech-stack ul, li {
+    display: block;
+}
+
+.tech-stack h3 {
+    margin-bottom: 15px;
+}
+
+.about-grid-container h3 {
+    color: #121212;
+    text-decoration: underline;
+    text-decoration-color: #ddf760;
+    text-decoration-thickness: 0.2rem;
+    text-underline-offset: 0.2rem;
+}
+
+.about-contact h3 {
+    text-decoration: none;
+    grid-area: about-contact;
+    display: flex;
+    text-align: left;
+    padding: 0 0.2rem;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+.about-contact a {
+    color: #121212;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    text-decoration: underline;
+    text-decoration-color: #ddf760;
+    text-decoration-thickness: 0.2rem;
+    text-underline-offset: 0.2rem;
+    margin-bottom: 20px;
+    padding: 0 0.2rem;
+}
+
+.about-contact a:hover {
+    background-color: #ddf760;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.tags-pic img {
+    width: 150px;
+    grid-area: tags-pic;
+    display: grid;
+    justify-self: end;
+    padding: 0px;
+}
+
+
+/*---------- ABOUT PAGE MEDIA QUERY ----------*/
+
+@media only screen and (max-width:670px) {
+    .about-grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content;
+        grid-template-areas: 
+            "profile-pic"
+            "about-me"
+            "tech-stack"
+            "tags-pic"
+            "about-contact";
+        margin: 60px 20px 20px 20px;
+    }
+    .about-me {
+        justify-self: center;
+        text-align: justify;
+        padding: 10px;
+        width: 100%;
+    }
+    .about-me h2 {
+        text-align: center;
+    }
+    .about-me p {
+        font-size: 0.9rem;
+    }
+    .tech-stack {
+        margin-top: 10px;
+        margin-bottom:15px;
+    }
+    .tags-pic, .about-contact {
+        justify-self: center;
+        max-width: 250px;
+    }
+}
+
+
+/*---------- CONTACT STYLING ----------*/
+
+.contact-me {
+    text-decoration: underline;
+    text-decoration-color: #ddf760;
+    text-decoration-thickness: 0.2rem;
+    text-underline-offset: 0.2rem;
+    margin-bottom: 20px;
+}
+.contact-list ul {
+    flex-direction: column;
+    justify-content: space-around;
+    line-height: 2.5rem;
+}
+
+.contact-list li a {
+    text-decoration: none;
+    margin: 0px;
+}
+
+.contact-list img {
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+    margin: 0px;
+}
+
+@media only screen and (max-width:670px) {
+    .contact-list li a {
+        letter-spacing: 0rem;
+    }
+}
+
+
+/*---------- FOOTER STYLING ----------*/
+
+.footer-container {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+}
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+    margin: auto;
+}
+
+.footer-icons img {
+    height: 30px;
+    padding: 4px;
+    margin: 0 15px;
+}
+
+.footer-icons img:hover {
+    background-color: #ADB3D5;
+    border-radius: 4px;
+}
